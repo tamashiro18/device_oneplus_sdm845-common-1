@@ -20,6 +20,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
+# Inherit OP Camera & gallery packages
+ifeq ($(TARGET_SHIPS_OOSCAM),true)
+$(call inherit-product, vendor/oneplus/camera/sdm845/config.mk)
+endif
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -181,6 +186,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
     init.oem.rc \
+    init.oneplus.camera.rc \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \

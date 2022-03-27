@@ -1,0 +1,9 @@
+[
+  {
+    "remote"      : "gitlab",
+    "repository"  : "anierin.t.bliss/vendor_oneplus_camera",
+    "branch"      : "sdm845",
+    "clone-depth" : "1",
+    "target_path" : "vendor/oneplus/camera/sdm845"
+  }
+]

@@ -1,0 +1,5 @@
+on boot
+    mkdir /data/misc/arrow/ 0770 cameraserver audio
+    write /data/misc/arrow/client_package_name "com.oneplus.camera"
+    chown cameraserver audio /data/misc/arrow/client_package_name
+    chmod 0644 /data/misc/arrow/client_package_name
